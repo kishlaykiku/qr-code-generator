@@ -6,16 +6,33 @@
 import inquirer from "inquirer";
 
 inquirer
-  .prompt([
-    'Enter address: '
-  ])
-  .then((answers) => {
-    // Use user feedback for... whatever!!
-  })
-  .catch((error) => {
-    if (error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
-    } else {
-      // Something else went wrong
+    .prompt([
+    {
+        name: 'address',
+        message: 'Enter address: ',
+        type: 'input',
+        validate(answers) {
+            // const regex = '((http|https)://)(www.)?';
+            if(!answers)
+            {
+                return "Please enter an address.";
+            }
+            return true;
+        } 
     }
-  });
+    ])
+    .then((answers) => 
+    {
+        console.log(answers.address);
+    })
+    .catch((error) => 
+    {
+        if (error.isTtyError) 
+        {
+            // Prompt couldn't be rendered in the current environment
+        } 
+        else 
+        {
+            // Something else went wrong
+        }
+    });
