@@ -13,14 +13,13 @@ inquirer
             name: 'address',
             message: 'Enter Address: ',
             type: 'input',
-            validate(answers)
-            {
-                // var re = new RegExp('(http|https)://(www.)?');
-                if(!answers)
+            validate: function(address) {
+                var re = new RegExp('(http|https)://(www.)?');
+                if(address && re.test(address))
                 {
-                    return "Enter valid address";
+                   return true;
                 }
-                return true;
+                return "Invalid Address!";
             }
         }
     ])
