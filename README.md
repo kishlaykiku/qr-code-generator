@@ -1,18 +1,18 @@
 # qr-code-generator
-## Using [inquirer](https://www.npmjs.com/package/inquirer), [file system](https://nodejs.org/docs/latest-v18.x/api/fs.html) and [qr-image](https://www.npmjs.com/package/qr-image) npm package to generate QR Code.
+## Using [inquirer](https://www.npmjs.com/package/inquirer), [file system](https://nodejs.org/docs/latest-v18.x/api/fs.html) and [qr-image](https://www.npmjs.com/package/qr-image) npm packages to generate a QR Code.
 
 ### Inquirer
 - Get user input.
 - Validate the input.
 - Use it for anything.
 
-### File system
+### File system (Native Node Module)
 - Save the user input as any file (txt preferably).
 
 ### Qr Image
 - Get the text to be converted from user input.
-- Convert the text into QR code.
-- Save the QR code as image in any format (png preferably).
+- Convert the text into a QR code.
+- Save the QR code as an image in any format (png preferably).
 
 <br>
 

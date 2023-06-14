@@ -35,7 +35,7 @@ inquirer
         // Use user feedback for... whatever!!
 
         // Storing the address in a variable
-        let addressLine = answers.address;
+        const addressLine = answers.address;
 
         // File System Usage: Storing the address in a txt file
         fs.writeFile("address.txt", addressLine, (err) => {
