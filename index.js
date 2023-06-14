@@ -4,25 +4,29 @@
 3. Create a txt file to save the user input using the native fs node module.
 */
 import inquirer from "inquirer";
+import fs from "fs";
 
 inquirer
     .prompt([
-    {
-        name: 'address',
-        message: 'Enter address: ',
-        type: 'input',
-        validate(answers) {
-            // const regex = '((http|https)://)(www.)?';
-            if(!answers)
+        /* Pass your questions in here */
+        {
+            name: 'address',
+            message: 'Enter Address: ',
+            type: 'input',
+            validate(answers)
             {
-                return "Please enter an address.";
+                // var re = new RegExp('(http|https)://(www.)?');
+                if(!answers)
+                {
+                    return "Enter valid address";
+                }
+                return true;
             }
-            return true;
-        } 
-    }
+        }
     ])
     .then((answers) => 
     {
+        // Use user feedback for... whatever!!
         console.log(answers.address);
     })
     .catch((error) => 
