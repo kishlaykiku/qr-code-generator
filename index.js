@@ -4,6 +4,7 @@
 3. Create a txt file to save the user input using the native fs node module.
 */
 import inquirer from "inquirer";
+import qr from "qr-image";
 import fs from "fs";
 
 inquirer
@@ -26,7 +27,10 @@ inquirer
     .then((answers) => 
     {
         // Use user feedback for... whatever!!
-        console.log(answers.address);
+        fs.writeFile("address.txt", answers.address, (err) => {
+            if(err) throw err;
+            console.log("File has been saved");
+        })
     })
     .catch((error) => 
     {
@@ -39,3 +43,4 @@ inquirer
             // Something else went wrong
         }
     });
+
