@@ -43,7 +43,7 @@ inquirer
             console.log("File has been saved");
         })
 
-        // Qr Image Usage: Generating qr code fromt the address
+        // Qr Image Usage: Generating qr code from the address
         let qr_png = qr.image(addressLine, {type: 'png', margin: 5, parse_url: true});
         // Saving the qr code in the form of qr image
         qr_png.pipe(fs.createWriteStream('qrcode.png'));
